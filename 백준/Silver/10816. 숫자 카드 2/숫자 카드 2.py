@@ -2,7 +2,7 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-lst = sorted(list(map(int,input().split())))
+lst = list(map(int,input().split()))
 
 m = int(input())
 lst2 = list(map(int,input().split()))
