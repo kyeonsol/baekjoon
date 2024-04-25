@@ -1,11 +1,19 @@
+import sys
+input = sys.stdin.readline
+
 lst = []
-
 for i in range(5):
-    lst.append(input())
+    lst.append(input().rstrip())
 
-sum = ''
+max_ = 0
+for i in range(len(lst)):
+    if max_ < len(lst[i]):
+        max_ = len(lst[i])
 
-for i in range(max(len(e) for e in lst)):
-    for j in range(5):
-        if i < len(lst[j]):
-            print(lst[j][i], end='')
+res = ''
+for j in range(max_):
+    for i in range(5):
+        if j < len(lst[i]):
+            res += lst[i][j]
+
+print(res)
