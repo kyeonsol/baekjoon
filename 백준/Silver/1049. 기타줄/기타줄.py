@@ -14,14 +14,15 @@ for i in range(m):
         ind = b
 
 
-if n < 6:
+'''if n < 6:
     buy_1 = n*ind
     buy_2 = set_
     print(min(buy_1,buy_2))
-elif n >= 6:
-    n_ = n//6 #끊어진 기타줄을 세트로 나타내기
-    mod = n%6
-    buy1 = n_*set_ + mod*ind
-    buy2 = n*ind
-    buy3 = (n_+1)*set_
-    print(min(buy1,buy2,buy3))
+elif n >= 6:'''
+
+n_ = n//6 #끊어진 기타줄을 세트로 나타내기
+mod = n%6
+buy1 = n_*set_ + mod*ind
+buy2 = n*ind
+buy3 = (n_+1)*set_
+print(min(buy1,buy2,buy3))
