@@ -1,11 +1,17 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
-i = 2
+res = []
 
-if n == 1:
-    print(' ')
+while 1:
+    if n == 1:
+        break
+    else:
+        for i in range(2,n+1):   
+            if n%i == 0:  #1부터 n까지 돌며 나누기
+                res.append(i)
+                n = n//i  #n을 몫으로 바꾸기
+                break  #반복
 
-for i in range(2, n+1):
-    if n % i == 0:
-        while n % i == 0:
-            print(i)
-            n = n / i
+print(*res,sep='\n')
