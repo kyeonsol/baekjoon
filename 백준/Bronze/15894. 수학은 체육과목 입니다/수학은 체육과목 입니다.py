@@ -1,3 +1,6 @@
-a = int(input())
+import sys
+input = sys.stdin.readline
 
-print(a*4)
+n = int(input())
+
+print(n*4)
