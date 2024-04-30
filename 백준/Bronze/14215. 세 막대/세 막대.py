@@ -1,14 +1,11 @@
-a,b,c = map(int,input().split())
-lst = [a,b,c]
-slst = sorted(lst)
+import sys
+input = sys.stdin.readline
 
-if slst[0]==slst[1]==slst[2]:
-    print(slst[0]*3)
+lst = list(map(int,input().split()))
+lst.sort()
 
-elif slst[2] >= slst[0]+slst[1]:
-    slst[2] = slst[0]+slst[1]-1
-    print(slst[0]+slst[1]+slst[2])
-
+if lst[0] + lst[1] <= lst[2]:
+    lst[2] = lst[0] + lst[1] - 1
+    print(sum(lst))
 else:
-    print(a+b+c)
-
+    print(sum(lst))
