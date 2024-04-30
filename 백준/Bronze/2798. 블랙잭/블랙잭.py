@@ -1,13 +1,17 @@
+import sys
+input = sys.stdin.readline
+
 n,m = map(int,input().split())
-card = list(map(int,input().split()))
-result = 0
+lst = list(map(int,input().split()))
+lst.sort(reverse = True)
+res = []
 
 for i in range(n):
     for j in range(i+1,n):
         for k in range(j+1,n):
-            if card[i] + card[j] + card[k] > m:
+            if m < lst[i] + lst[j] + lst[k]:
                 continue
             else:
-                result = max(result, card[i]+card[j]+card[k])
+                res.append(lst[i] + lst[j] + lst[k])
 
-print(result)
+print(max(res))
