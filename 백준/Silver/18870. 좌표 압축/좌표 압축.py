@@ -13,5 +13,5 @@ for i in lst_s:
     dic[i] = cnt
     cnt += 1
 
-for n in lst:
-    print(dic[n],end=' ')
+for i in lst:
+    print(dic[i], end=' ')
