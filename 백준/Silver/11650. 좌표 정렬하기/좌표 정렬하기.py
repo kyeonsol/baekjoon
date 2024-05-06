@@ -1,11 +1,14 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
 lst = []
 
 for i in range(n):
-    [x,y] = map(int,input().split())
-    lst.append([x,y])
+    a,b = map(int,input().split())
+    lst.append([a,b])
 
-s_lst = sorted(lst)
+lst.sort(key = lambda x : (x[0],x[1]))
 
 for i in range(n):
-    print(s_lst[i][0],s_lst[i][1])
+    print(*lst[i],end='\n')
