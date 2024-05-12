@@ -1,14 +1,14 @@
 import sys
 input = sys.stdin.readline
 
-n = int(input())
-lst = []
+k = int(input())
+stack = []
 
-for i in range(n):
+for i in range(k):
     a = int(input())
     if a == 0:
-        del lst[-1]
+        stack.pop()
     else:
-        lst.append(a)
+        stack.append(a)
 
-print(sum(lst))
+print(sum(stack))
