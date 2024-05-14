@@ -1,23 +1,27 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
-standing = list(map(int,input().split()))
+lst = list(map(int,input().split()))
 stack = []
-target = 1
+cnt = 1
 
-while standing:
-    if standing[0] == target:
-        standing.pop(0)
-        target += 1
-    else:
-        stack.append(standing.pop(0))
-
-    while stack:
-        if stack[-1] == target:
-            stack.pop()
-            target += 1
+for i in range(n):
+    if lst[0] == cnt: #번호와 같을 때
+        lst.pop(0) #빼고 번호를 1 늘림
+        cnt += 1
+    else: #다를 때
+        stack.append(lst[0])
+        lst.pop(0)
+    
+    while len(stack) != 0:
+        if stack[-1] == cnt:
+            stack.pop(-1)
+            cnt += 1
         else:
             break
-
-if len(stack) == 0:
-    print('Nice')
-else:
+       
+if len(stack) != 0:
     print('Sad')
+else:
+    print('Nice')
