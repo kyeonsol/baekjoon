@@ -1,20 +1,20 @@
 import sys
+input = sys.stdin.readline
 from collections import deque
 
-input = sys.stdin.readline
-
 n = int(input())
-paper = deque(list(map(int, input().split())))
-index = deque([i for i in range(1, n + 1)])
-poped = []
+b = deque(list(map(int,input().split())))
+index = deque([i for i in range(1,n+1)])
+res = []
 
-while paper:
-    num = paper.popleft()
-    poped.append(index.popleft())
-    if num > 0:
-        paper.rotate(-(num-1))
-        index.rotate(-(num-1))
+for i in range(n):
+    a = b.popleft()
+    res.append(index.popleft())
+    if a>0:
+        b.rotate(-a+1)
+        index.rotate(-a+1)
     else:
-        paper.rotate(-num)
-        index.rotate(-num)
-print(*poped)
+        b.rotate(-a)
+        index.rotate(-a)
+
+print(*res)
