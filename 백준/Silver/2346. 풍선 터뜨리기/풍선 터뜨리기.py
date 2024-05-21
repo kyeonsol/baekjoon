@@ -1,14 +1,20 @@
 import sys
-input = sys.stdin.readline
 from collections import deque
 
-n = int(input())
-deq = deque(enumerate(map(int,input().split()), start = 1))
+input = sys.stdin.readline
 
-for i in range(n):
-    p = deq.popleft()
-    print(p[0], end=' ')
-    if p[1] > 0:
-        deq.rotate(-(p[1] - 1))
+n = int(input())
+paper = deque(list(map(int, input().split())))
+index = deque([i for i in range(1, n + 1)])
+poped = []
+
+while paper:
+    num = paper.popleft()
+    poped.append(index.popleft())
+    if num > 0:
+        paper.rotate(-(num-1))
+        index.rotate(-(num-1))
     else:
-        deq.rotate(-p[1])
+        paper.rotate(-num)
+        index.rotate(-num)
+print(*poped)
