@@ -2,9 +2,9 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-result = 1
+m = 1
 
-for i in range(1,n+1):
-    result *= i
+for i in range(2,n+1):
+    m *= i
 
-print(result)
+print(m)
