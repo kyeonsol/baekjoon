@@ -1,12 +1,13 @@
 import sys
 input = sys.stdin.readline
 
-def factorial(n):
-    answer = 1
-    for i in range(1,n+1):
-        answer *= i
-    return answer
+def fac(x):
+    total = 1
+    for i in range(2,x+1):
+        total *= i
+    return total
 
-n,k = map(int,input().split())
+n, k = map(int,input().split())
+m, l = max(n,k), min(n,k) #m>l
 
-print(factorial(n)//factorial(k)//factorial(n-k))
+print(int(fac(m)/(fac(l)*fac(m-l))))
