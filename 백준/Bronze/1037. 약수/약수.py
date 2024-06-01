@@ -2,9 +2,11 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-lst = list(map(int,input().split()))
 
 if n == 1:
-    print(max(lst)**2)
+    a = int(input())
+    print(a**2)
 else:
-    print(max(lst)*min(lst))
+    lst = list(map(int,input().split()))
+    slst = sorted(lst)
+    print(slst[0]*slst[-1])
