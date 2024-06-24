@@ -1,17 +1,16 @@
 import sys
 input = sys.stdin.readline
 
+cnt = 0
+
 n = int(input())
-s = set()
-ans = 0
 
 for i in range(n):
-    a = input().strip()
+    a = input().rstrip()
     if a == 'ENTER':
-        s.clear()
-        ans += len(s)
+        s = set()
     elif a not in s:
-        ans += 1
         s.add(a)
+        cnt += 1
 
-print(ans)
+print(cnt)
