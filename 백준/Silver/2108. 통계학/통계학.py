@@ -1,25 +1,35 @@
 import sys
 input = sys.stdin.readline
-from collections import Counter
 
 n = int(input())
-lst = []
+lst = list()
 
 for i in range(n):
     lst.append(int(input()))
 
 lst.sort()
 
-print(round(sum(lst)/n))
-print(lst[n//2])
+print(round(sum(lst)/n)) #산술평균
+print(lst[len(lst)//2]) #중앙값
 
-temp = Counter(lst).most_common()
-if len(temp) > 1:
-    if temp[0][1] == temp[1][1]:
-        print(temp[1][0])
+dic = {}
+#최빈값, 범위
+for i in lst:
+    if i in dic:
+        dic[i] += 1
     else:
-        print(temp[0][0])
-else:
-    print(temp[0][0])
+        dic[i] = 0
 
-print(max(lst) - min(lst))
+m = max(dic.values())
+m_lst = []
+
+for i in dic:
+    if m == dic[i]:
+        m_lst.append(i)
+
+if len(m_lst) == 1:
+    print(m_lst[0])
+else:
+    print(m_lst[1])
+
+print(lst[-1]-lst[0])
