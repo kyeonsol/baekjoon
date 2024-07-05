@@ -1,9 +1,10 @@
 import sys
 input = sys.stdin.readline
 
-def fibonacci(n):
-    if n <= 1:
-        return n
-    return fibonacci(n-1) + fibonacci(n-2)
+n = int(input())
+lst = [0,1]
 
-print(fibonacci(int(input())))
+for i in range(n):
+    lst.append(lst[i]+lst[i+1])
+
+print(lst[-2])
