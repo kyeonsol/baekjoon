@@ -1,11 +1,7 @@
-a,b,c=map(int,input().split())
+import sys
+input = sys.stdin.readline
 
-if a<=b<=c or c<=b<=a:
-    print(b)
+lst = list(map(int,input().split()))
 
-elif b<=a<=c or c<=a<=b:
-    print(a)
-
-elif a<=c<=b or b<=c<=a:
-    print(c)
-
+lst.remove(max(lst))
+print(max(lst))
