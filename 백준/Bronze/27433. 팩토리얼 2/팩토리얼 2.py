@@ -1,10 +1,10 @@
 import sys
 input = sys.stdin.readline
 
-result = 1
 n = int(input())
+t = 1
 
 for i in range(1,n+1):
-    result *= i    
+    t *= i
 
-print(result)
+print(t)
