@@ -1,15 +1,13 @@
 import sys
 input = sys.stdin.readline
 
-a = [31,28,31,30,31,30,31,31,30,31,30,31]
-week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
-day = 0
+x,y = map(int,input().split())
+month = [31,28,31,30,31,30,31,31,30,31,30,31]
+day = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
 
-x, y = map(int,input().split())
+date = sum(month[:x-1]) + y
 
-for i in range(0,x-1):
-    day += a[i]
-
-day = (day + y) % 7
-
-print(week[day])
+if date > 7:
+    print(day[date%7-1])
+else:
+    print(day[date-1])
