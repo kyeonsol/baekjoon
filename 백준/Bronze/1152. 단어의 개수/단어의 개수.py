@@ -1,3 +1,7 @@
-a= input().strip().split()
+
+import sys
+input = sys.stdin.readline
+
+a = input().split()
 
 print(len(a))
