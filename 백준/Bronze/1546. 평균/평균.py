@@ -1,8 +1,12 @@
-n=int(input())
-lst=list(map(int,input().split()))
-x=max(lst)
+import sys
+input = sys.stdin.readline
 
-for i in range(n):
-    lst[i]=lst[i]/x*100
+n = int(input()) #int
+lst = list(map(int,input().split())) #list int
+new = [] #list
+m = max(lst) #int
 
-print(sum(lst)/n)
+for i in range(n): #int
+    new.append(lst[i]/m*100)
+
+print(sum(new)/n)
