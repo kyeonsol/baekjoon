@@ -1,8 +1,11 @@
-a=input()
-b='abcdefghijklmnopqrstuvwxyz'
+import sys
+input = sys.stdin.readline
 
-for i in b:
-    if i in a:
-        print(a.index(i))
+s = input().rstrip()
+a = 'abcdefghijklmnopqrstuvwxyz'
+
+for i in a:
+    if i in s:
+        print(s.index(i), end=' ')
     else:
-        print(-1)
+        print(-1,end=' ')
