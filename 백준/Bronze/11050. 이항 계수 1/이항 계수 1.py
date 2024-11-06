@@ -1,13 +1,14 @@
 import sys
 input = sys.stdin.readline
 
-def fac(x):
-    total = 1
-    for i in range(2,x+1):
-        total *= i
-    return total
+def fac(x): #factorial
+    t = 1
+    for i in range(1,x+1):
+        t*=i
+    return t
 
-n, k = map(int,input().split())
-m, l = max(n,k), min(n,k) #m>l
+def bino_coef_fac(x,y):
+    return fac(x)//fac(y)//fac(x-y)
 
-print(int(fac(m)/(fac(l)*fac(m-l))))
+n,k = map(int,input().split())
+print(bino_coef_fac(n,k))
