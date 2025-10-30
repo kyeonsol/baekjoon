@@ -1,9 +1,13 @@
-n = input()
-lst = []
+import sys
+input = sys.stdin.readline
 
-for i in str(n):
-    lst.append(int(i))
+#각 자리수를 내림차순으로 정렬
+n = list(input().strip())
 
-lst.sort(reverse=True)
+for i in n:
+    i = int(i)
 
-print(*lst,sep='')
+new_n = sorted(n,reverse=True)
+
+for i in new_n:
+    print(i,end='')
